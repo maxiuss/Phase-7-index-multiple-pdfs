@@ -1,12 +1,19 @@
-import openai
 import os
+import openai
 import json
 import faiss
 import numpy as np
 from dotenv import load_dotenv
 
+# Load environment variables from the .env file in the project root.
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# Retrieve and check the API key.
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+if not OPENAI_API_KEY:
+    raise Exception("Missing OPENAI_API_KEY in your .env file.")
+
+openai.api_key = OPENAI_API_KEY
 
 def get_embedding(text, model="text-embedding-ada-002"):
     """

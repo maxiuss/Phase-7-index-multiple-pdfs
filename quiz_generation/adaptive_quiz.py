@@ -3,7 +3,7 @@ import openai
 import os
 import re
 from difflib import SequenceMatcher
-from quiz_generation.semantic_search import semantic_search  # Changed this line - using relative import
+from semantic_search.semantic_search import semantic_search  # Changed this line - using relative import
 from dotenv import load_dotenv
 
 load_dotenv()
